@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-
-.roboto{
+.roboto {
   .roboto-regular {
-    font-family: "Roboto", sans-serif;
-   
+    font-family: 'Roboto', sans-serif;
+
     font-style: normal;
   }
 }
 
-.background{
+.background {
   background: url(/images/Rectangle\ 8.svg);
   background-repeat: no-repeat;
 }
 
-.common{
-  background-color: #1DD100;
+.common {
+  background-color: #1dd100;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
 }
