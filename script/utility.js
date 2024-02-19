@@ -8,16 +8,16 @@ for (const tikect of allTikect) {
     count = count + 1;
     count2 = count2 - 1;
 
-    // console.log(tikect.innerText);
+  
     const seatName = tikect.innerText;
     const economyClass = 'Economy';
     const tickPrice = '550';
 
-    //const priceNum = document.getElementById('price');
+   
 
-    // const totalPrice = document.getElementById('Total-price');
+     const totalPrice = document.getElementById('Total-price');
 
-    // const getPrice = totalPrice.innerText;
+    ;
 
     if (count > 4) {
       document.getElementById('alert').classList.remove('hidden');
@@ -28,6 +28,7 @@ for (const tikect of allTikect) {
       e.target.classList.add('common');
       setInnerText('tikect-item', count);
       setInnerText('Total-price', total);
+      setInnerText('tikect-stock', count2);
 
       const selectedContainer = document.getElementById('selected-container');
       const li = document.createElement('li');
@@ -47,22 +48,20 @@ for (const tikect of allTikect) {
       selectedContainer.appendChild(li);
     }
 
-    setInnerText('tikect-stock', count2);
-    hideElementById('tikect-stock', count2)
-    //tikectStock('tikect-stock',count2)
-
-    //document.getElementById('tikect-item').innerText=count
+   
+   
+   
   });
 }
 
-// function setInnerText(id, value) {
-//   document.getElementById(id).innerText = value;
-// }
+function setInnerText(id, value) {
+  document.getElementById(id).innerText = value;
+}
 
-// function hideElementById(elementId) {
-//   const element = document.getElementById(elementId);
-//   element.classList.add('hidden');
-// }
+function hideElementById(elementId) {
+  const element = document.getElementById(elementId);
+  element.classList.add('hidden');
+}
 
 function showElementById(elementId) {
   const element = document.getElementById(elementId);
