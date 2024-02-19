@@ -8,16 +8,11 @@ for (const tikect of allTikect) {
     count = count + 1;
     count2 = count2 - 1;
 
-  
     const seatName = tikect.innerText;
     const economyClass = 'Economy';
     const tickPrice = '550';
 
-   
-
-     const totalPrice = document.getElementById('Total-price');
-
-    ;
+    const totalPrice = document.getElementById('Total-price');
 
     if (count > 4) {
       document.getElementById('alert').classList.remove('hidden');
@@ -46,11 +41,33 @@ for (const tikect of allTikect) {
       li.appendChild(p2);
       li.appendChild(p3);
       selectedContainer.appendChild(li);
-    }
+      //apply
+      document
+        .getElementById('btn-apply')
+        .addEventListener('click', function (event) {
+          const couponCode = document.getElementById('coupon').value;
+          let totalElement = document.getElementById('total-cost');
 
-   
-   
-   
+          let grandTotal;
+
+          if (couponCode === 'NEW15') {
+            grandTotal = total - (total * 15) / 100;
+            document.getElementById('alert-coupon').classList.add('hidden');
+            document.getElementById('coupon').style.display = 'none';
+            event.target.style.display = 'none';
+          } else if (couponCode === 'Couple 20') {
+            grandTotal = total - (total * 20) / 100;
+            document.getElementById('alert-coupon').classList.add('hidden');
+            document.getElementById('coupon').style.display = 'none';
+            event.target.style.display = 'none';
+          } else {
+            document.getElementById('alert-coupon').classList.remove('hidden');
+            grandTotal = total;
+          }
+
+          totalElement.innerText = grandTotal;
+        });
+    }
   });
 }
 
